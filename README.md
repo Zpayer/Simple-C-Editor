@@ -7,7 +7,7 @@ C code editor built with **Wails**, **Go**, and **Node.js**.
 
 ## Tech Stack
 - **Backend**: Go (Golang)
-- **Frontend**: HTML/CSS/JS (React/Vue/Svelte via Wails)
+- **Frontend**: HTML/CSS/JS
 - **App Framework**: [Wails](https://wails.io/)
 - **C Compiler**: [Tcc](https://bellard.org/tcc/)
 
