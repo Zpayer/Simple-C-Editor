@@ -1,0 +1,197 @@
+:root {
+    --border-rad: 10px;
+
+    --head-height: 35px;
+    --side-bar-width: 50px;
+    --output-height: 200px;
+
+    --tint-color: #000000a1;
+
+}
+
+@font-face {
+    font-family: "Fira Code";
+    src: url(/src/assets/fonts/fira_code/FiraCode-Regular.ttf);
+}
+
+@font-face {
+    font-family: Bugatti Text Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(/src/assets/fonts/BUGText-Regular.woff2) format("woff2")
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff36; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff79; 
+}
+
+* {
+    font-family: "Fira Code", monospace;
+    color: #d3d3d3;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: #242329;
+    --bc: #ffffff24;
+    background-image: url(./assets/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    height: var(--head-height);
+    background: var(--tint-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: url(#liquid-glass) blur(2px) saturate(150%);
+}
+
+.drag-region {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 12px;
+    font-family: "Bugatti Text Regular", sans-serif;
+    --wails-draggable: drag;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.window-controls {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-right: 10px;
+    gap: 15px;
+}
+
+.control-btn {
+    height: 35%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    transition: 0.2s ease;
+    border-radius: 100%;
+}
+
+.control-btn:hover {
+    opacity: 0.7;
+}
+
+.side-btn {
+    cursor: pointer;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: var(--border-rad);
+    transition: .5s ease;
+    aspect-ratio: 1 / 1;
+}
+
+.side-btn:hover {
+    background-color: #ffffff20;
+}
+
+.side-btn svg {
+    width: 70%;
+    height: 100%;
+}
+
+
+#min-btn {
+    background-color: rgb(221, 207, 124);
+}
+
+#max-btn {
+    background-color: rgb(124, 221, 145);
+}
+
+#close-btn {
+    background-color: rgb(221, 124, 124);
+}
+
+#content {
+    height: calc(100% - var(--head-height) - 5px - var(--output-height) - 5px);
+    width: calc(100% - var(--side-bar-width) - 5px);
+    right: 0;
+    position: absolute;
+    top: calc(var(--head-height) + 5px);
+    /*backdrop-filter: url(#liquid-glass) blur(2px) saturate(150%);*/
+    background: var(--tint-color);
+}
+
+#side-bar {
+    position: absolute;
+    left: 0;
+    top: var(--head-height);
+    width: var(--side-bar-width);
+    height: calc(100% - var(--head-height));
+    border-right: 4px solid #ffffff30;
+    backdrop-filter: url(#liquid-glass) blur(2px) saturate(150%);
+    background: var(--tint-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+#output {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - var(--side-bar-width) - 5px);
+    height: var(--output-height);
+    border-top: 4px solid #ffffff30;
+    backdrop-filter: url(#liquid-glass) blur(2px) saturate(150%);
+    background: var(--tint-color);
+    white-space: break-spaces;
+    overflow: auto;
+}
+
+#settings {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100% - var(--side-bar-width) - 5px);
+    height: calc(100% - var(--head-height));
+    backdrop-filter: url(#liquid-glass) blur(10px) saturate(150%);
+}
