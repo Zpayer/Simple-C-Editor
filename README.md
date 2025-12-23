@@ -2,6 +2,9 @@
 
 C code editor built with **Wails**, **Go**, and **Node.js**.
 
+![preview](https://raw.githubusercontent.com/Zpayer/Simple-C-Editor/refs/heads/main/preview.png)
+
+
 ## Tech Stack
 - **Backend**: Go (Golang)
 - **Frontend**: HTML/CSS/JS (React/Vue/Svelte via Wails)
